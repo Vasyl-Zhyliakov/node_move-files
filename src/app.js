@@ -20,6 +20,10 @@ async function remove() {
     return;
   }
 
+  if (sourcePath === destinationPath) {
+    return;
+  }
+
   try {
     if (fs.existsSync(destinationPath)) {
       const stats = await fsp.stat(destinationPath);
